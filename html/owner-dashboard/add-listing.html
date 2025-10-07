@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Listing | Findly</title>
+
+  <!-- Common Dashboard CSS -->
+  <link rel="stylesheet" href="../../css/owner-dashboard/owner-dashboard.css">
+
+  <!-- Page-Specific CSS -->
+  <link rel="stylesheet" href="../../css/owner-dashboard/add-listing.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="dashboard-container fade-in">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="brand-logo">
+      </div>
+
+      <ul class="menu">
+        <li><a href="owner-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li class="active"><a href="add-listing.html"><i class="fas fa-plus-circle"></i> Add Listing</a></li>
+        <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
+        <li><a href="settings.html"><i class="fas fa-user-cog"></i> Settings</a></li>
+        <li><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content fade-in">
+      <header class="topbar">
+        <h1>Add <span>New Listing</span></h1>
+        <div class="profile">
+          <img src="../../images/user1.jpg" alt="Owner" class="owner-logo">
+        </div>
+      </header>
+
+      <!-- Add Listing Form -->
+      <section class="form-section">
+        <form class="add-listing-form">
+          <label for="type">Service Type</label>
+          <select id="type" name="type" required>
+            <option value="">Select Type</option>
+            <option value="hostel">Hostel</option>
+            <option value="mess">Mess</option>
+            <option value="coaching">Coaching</option>
+            <option value="college">College</option>
+          </select>
+
+          <label for="name">Listing Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter name" required>
+
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="Enter city or area" required>
+
+          <label for="price">Price (₹/month)</label>
+          <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+          <label for="image">Image URL</label>
+          <input type="text" id="image" name="image" placeholder="Paste image link">
+
+          <button type="submit" class="btn-add"><i class="fas fa-plus"></i> Add Listing</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- ✅ Active Sidebar Highlight -->
+  <script>
+    const currentPage = location.pathname.split("/").pop();
+    const links = document.querySelectorAll(".menu a");
+    links.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.parentElement.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>

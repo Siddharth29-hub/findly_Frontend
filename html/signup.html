@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Findly | Signup</title>
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="../css/signup.css" />
+
+  <!-- Font Awesome for Input Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Signup Container -->
+  <div class="signup-container">
+    <img src="../images/findly-full-logo.png" alt="Findly Logo" class="signup-logo">
+    <h2>Sign Up</h2>
+    <p>Create an account or <a href="login.html">Login</a></p>
+
+    <form>
+      <!-- Username -->
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" id="username" placeholder="Enter your username" required>
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <!-- Mobile -->
+      <div class="input-group">
+        <i class="fa fa-phone"></i>
+        <input type="tel" id="mobile" placeholder="Enter your mobile number" required>
+      </div>
+
+      <!-- Role -->
+      <div class="input-group">
+        <i class="fa fa-user-tag"></i>
+        <select id="role" required>
+          <option value="">Select your role</option>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+          <option value="owner">Owner</option>
+          <option value="agent">Agent</option>
+        </select>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="checkbox">
+        <input type="checkbox" id="newsletter">
+        <label for="newsletter">I agree to receive important updates & offers</label>
+      </div>
+
+      <!-- Button -->
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+
+    <!-- Terms -->
+    <p class="terms">
+      By signing up, you agree to our <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
+    </p>
+  </div>
+</body>
+</html>

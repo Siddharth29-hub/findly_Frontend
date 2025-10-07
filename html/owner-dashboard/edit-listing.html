@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Listing | Findly Owner Dashboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/owner-dashboard/add-listing.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="../images/findly-logo.png" alt="Findly Logo">
+        <h2>Findly</h2>
+      </div>
+      <ul class="menu">
+  <li><a href="owner-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+  <li><a href="add-listing.html"><i class="fas fa-plus-circle"></i> Add Listing</a></li>
+  <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
+  <li><a href="settings.html"><i class="fas fa-user-cog"></i> Settings</a></li>
+  <li><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+</ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>Edit Listing</h1>
+        <p>Modify your existing service details below.</p>
+      </header>
+
+      <div class="form-container">
+        <form id="editListingForm">
+          <div class="form-group">
+            <label>Service Type</label>
+            <select id="serviceType" required>
+              <option value="Hostel">Hostel</option>
+              <option value="Mess">Mess</option>
+              <option value="Coaching">Coaching</option>
+              <option value="College">College</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Listing Name</label>
+            <input type="text" id="listingName" placeholder="Enter name" required>
+          </div>
+
+          <div class="form-group">
+            <label>Location</label>
+            <input type="text" id="location" placeholder="Enter city or area" required>
+          </div>
+
+          <div class="form-group">
+            <label>Price (₹/month)</label>
+            <input type="number" id="price" placeholder="6500" required>
+          </div>
+
+          <div class="form-group">
+            <label>Image URL</label>
+            <input type="text" id="imageUrl" placeholder="Paste image link" required>
+          </div>
+
+          <button type="submit" class="btn-submit"><i class="fas fa-save"></i> Update Listing</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Load existing data for editing
+    const listings = JSON.parse(localStorage.getItem("findlyListings")) || [];
+    const index = localStorage.getItem("editListingIndex");
+
+    if (index === null || !listings[index]) {
+      alert("⚠️ No listing found to edit!");
+      window.location.href = "my-listings.html";
+    }
+
+    // Populate the form
+    const listing = listings[index];
+    document.getElementById("serviceType").value = listing.serviceType;
+    document.getElementById("listingName").value = listing.name;
+    document.getElementById("location").value = listing.location;
+    document.getElementById("price").value = listing.price;
+    document.getElementById("imageUrl").value = listing.imageUrl;
+
+    // Handle form submission
+    document.getElementById("editListingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      listings[index] = {
+        serviceType: document.getElementById("serviceType").value,
+        name: document.getElementById("listingName").value,
+        location: document.getElementById("location").value,
+        price: document.getElementById("price").value,
+        imageUrl: document.getElementById("imageUrl").value
+      };
+
+      localStorage.setItem("findlyListings", JSON.stringify(listings));
+
+      alert("✅ Listing updated successfully!");
+      localStorage.removeItem("editListingIndex");
+      window.location.href = "my-listings.html";
+    });
+  </script>
+</body>
+</html>

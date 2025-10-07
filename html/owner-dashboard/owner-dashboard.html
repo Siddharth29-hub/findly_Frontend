@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Dashboard | Findly</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Owner Dashboard CSS -->
+  <link rel="stylesheet" href="../../css/owner-dashboard/owner-dashboard.css">
+</head>
+
+<body>
+  <div class="owner-dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="../../images/findly-full-logo.png" alt="Findly Logo">
+      </div>
+      <ul class="menu">
+        <li class="active"><a href="owner-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="add-listing.html"><i class="fas fa-plus-circle"></i> Add Listing</a></li>
+        <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Welcome, <span>Owner</span></h1>
+        <div class="profile">
+          <img src="../../images/user1.jpg" alt="Owner" class="owner-logo">
+        </div>
+      </header>
+
+      <section class="stats">
+        <div class="card fade">
+          <i class="fas fa-building"></i>
+          <h3>Hostels</h3>
+          <p>4 Active Listings</p>
+        </div>
+
+        <div class="card fade">
+          <i class="fas fa-utensils"></i>
+          <h3>Mess</h3>
+          <p>2 Active Listings</p>
+        </div>
+
+        <div class="card fade">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Coaching</h3>
+          <p>3 Centers Listed</p>
+        </div>
+
+        <div class="card fade">
+          <i class="fas fa-university"></i>
+          <h3>Colleges</h3>
+          <p>1 Institution</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Fade-In Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".fade").forEach((el, index) => {
+        setTimeout(() => el.classList.add("visible"), 150 * index);
+      });
+    });
+  </script>
+</body>
+</html>

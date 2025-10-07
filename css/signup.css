@@ -1,0 +1,152 @@
+/* Full moving gradient background */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(-45deg, #f83600, #f9d423, #f83600, #f9d423);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Signup container = white card */
+.signup-container {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  width: 430px;        /* wider */
+  min-height: 360px;   /* shorter */
+  max-width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Logo */
+.signup-logo {
+  height: 45px;      /* smaller height */
+  width: auto;       /* keep aspect ratio */
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  /* centers the logo */
+}
+
+/* Heading */
+.signup-container h2 {
+  margin-bottom: 6px;
+  font-size: 20px;     /* smaller */
+  font-weight: 600;
+  color: #000;
+}
+
+/* Subtext under heading */
+.signup-container p {
+  font-size: 13px;     /* reduced */
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Input groups with icons */
+.input-group {
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 13px;     /* smaller icon */
+  color: #888;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px 10px 10px 36px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;     /* smaller text */
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #f83600;
+}
+
+/* Checkbox */
+.checkbox {
+  text-align: left;
+  margin: 10px 0;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+}
+
+/* Button */
+.btn {
+  background: linear-gradient(90deg, #f83600, #f9d423);
+  border: none;
+  color: #fff;
+  padding: 10px;       /* smaller */
+  width: 100%;
+  font-size: 13px;     /* smaller text */
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Links inside card */
+.signup-container p a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.signup-container p a:hover {
+  color: #f83600;
+}
+
+/* Terms */
+.terms {
+  font-size: 11px;     /* smaller */
+  margin-top: 12px;
+  color: #000;
+  line-height: 1.4;
+}
+
+/* Terms links */
+.terms a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.terms a:hover {
+  color: #f83600;
+}

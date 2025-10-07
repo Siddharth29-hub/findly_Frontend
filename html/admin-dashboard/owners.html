@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Owners | Findly Admin</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/admin-dashboard/admin-dashboard.css">
+  <link rel="stylesheet" href="../../css/admin-dashboard/owners.css">
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="../../images/findly-full-logo.png" alt="Findly Logo">
+      </div>
+      <ul class="menu">
+        <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li class="active"><a href="owners.html"><i class="fas fa-user-tie"></i> Owners</a></li>
+        <li><a href="listings.html"><i class="fas fa-building"></i> Listings</a></li>
+        <li><a href="users.html"><i class="fas fa-users"></i> Users</a></li>
+        <li><a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Manage <span>Owners</span></h1>
+        <button class="btn-add" id="openModal"><i class="fas fa-plus"></i> Add Owner</button>
+      </header>
+
+      <section class="owners-table">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Date Joined</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="ownerTableBody">
+            <tr>
+              <td>1</td>
+              <td>Rahul Sharma</td>
+              <td>rahul@findly.com</td>
+              <td>Hostel Owner</td>
+              <td>12 Jan 2025</td>
+              <td>
+                <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                <button class="btn-delete"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ananya Gupta</td>
+              <td>ananya@findly.com</td>
+              <td>Mess Owner</td>
+              <td>05 Feb 2025</td>
+              <td>
+                <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                <button class="btn-delete"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal (Add Owner Form) -->
+  <div class="modal" id="ownerModal">
+    <div class="modal-content">
+      <h2>Add New Owner</h2>
+      <form id="addOwnerForm">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <select required>
+          <option value="">Select Role</option>
+          <option value="Hostel Owner">Hostel Owner</option>
+          <option value="Mess Owner">Mess Owner</option>
+          <option value="Coaching Owner">Coaching Owner</option>
+        </select>
+        <button type="submit" class="btn-submit">Add Owner</button>
+      </form>
+      <button class="closeModal" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    const modal = document.getElementById('ownerModal');
+    const openModalBtn = document.getElementById('openModal');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    openModalBtn.addEventListener('click', () => modal.style.display = 'flex');
+    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+  </script>
+</body>
+</html>

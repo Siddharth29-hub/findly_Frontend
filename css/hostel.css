@@ -1,0 +1,261 @@
+/* ========================
+   Hostel Listings
+======================== */
+.hostel-listings {
+  padding: 80px 20px;
+  background: #fff;
+  /* text-align: center; */
+}
+
+.hostel-listings h2 {
+  font-size: 36px;                /* Slightly smaller for elegance */
+  margin-bottom: 40px;
+  color: #111;                    /* Pure black */
+  font-weight: 400;               /* Slim, lighter weight */
+  text-align: center;
+  text-transform: capitalize;     /* Cleaner title case */
+  letter-spacing: 0.5px;          /* More subtle spacing */
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0;              /* No extra bottom padding */
+}
+
+/* ❌ Removed gradient underline */
+.hostel-listings h2::after {
+  content: none;
+}
+
+.hostel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ Always 2 cards per row */
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Hostel Card */
+.hostel-card {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hostel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(248, 54, 0, 0.2);
+}
+
+.hostel-img {
+  width: 40%;
+  object-fit: cover;
+}
+
+/* Info Section */
+.hostel-info {
+  padding: 20px;
+  flex: 1;
+  position: relative;
+}
+
+.hostel-info h3 {
+  /* color: #f83600; */
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hostel-info p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.hostel-info i {
+  color: #f83600;
+  margin-right: 5px;
+}
+
+/* ✅ Sticky Price Badge */
+.price-badge {
+  position: sticky;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: #000; /* Black text */
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 16px; /* Slightly bigger */
+  font-weight: 700;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  float: right;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-badge:hover {
+  transform: scale(1.08); /* Pops out */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Action Buttons */
+.hostel-actions {
+  margin-top: 12px;
+}
+
+.btn-view,
+.btn-book {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-view {
+  background: #f9f9f9;
+  color: #f83600;
+  border: 1px solid #f83600;
+  margin-right: 10px;
+}
+
+.btn-view:hover {
+  background: #f83600;
+  color: #fff;
+}
+
+.btn-book {
+  background: #f83600;
+  color: #fff;
+}
+
+.btn-book:hover {
+  background: #d12e00;
+}
+
+/* ========================
+   Hostel Highlights
+======================== */
+.hostel-services {
+  padding: 80px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.hostel-services h2 {
+  font-size: 34px;
+  color: #f83600;
+  margin-bottom: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hostel-services .hostel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.hostel-services .hostel-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.hostel-services .hostel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 28px rgba(248, 54, 0, 0.25);
+}
+
+.hostel-services .hostel-card i {
+  font-size: 46px;
+  color: #f83600;
+  margin-bottom: 18px;
+}
+
+.hostel-services .hostel-card h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hostel-services .hostel-card p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ========================
+   CTA Section
+======================== */
+.hostel-cta {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #f83600, #f9d423);
+  color: #fff;
+}
+
+.hostel-cta h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hostel-cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.hostel-cta .btn-cta {
+  background: #fff;
+  color: #f83600;
+  padding: 15px 36px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.hostel-cta .btn-cta:hover {
+  background: #f83600;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ========================
+   Responsive Layout
+======================== */
+@media (max-width: 768px) {
+  .hostel-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+  .hostel-card {
+    flex-direction: column;
+  }
+  .hostel-img {
+    width: 100%;
+    height: 200px;
+  }
+  .price-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

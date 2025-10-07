@@ -1,0 +1,285 @@
+/* =============================
+   Global Layout
+============================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f8fa;
+  color: #333;
+  display: flex;
+  opacity: 0;
+  animation: fadeInBody 0.8s ease-out forwards;
+}
+
+/* Parent Container */
+.owner-dashboard-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =============================
+   Sidebar
+============================= */
+.sidebar {
+  width: 250px;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: sidebarSlideIn 0.8s ease-out 0.3s forwards;
+}
+
+.sidebar .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.sidebar .logo img {
+  width: 130px;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: logoFadeIn 1s ease-out forwards;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sidebar .menu li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px 0;
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: menuFadeIn 0.6s ease-out forwards;
+}
+
+.sidebar .menu li:nth-child(1) { animation-delay: 0.5s; }
+.sidebar .menu li:nth-child(2) { animation-delay: 0.6s; }
+.sidebar .menu li:nth-child(3) { animation-delay: 0.7s; }
+.sidebar .menu li:nth-child(4) { animation-delay: 0.8s; }
+.sidebar .menu li:nth-child(5) { animation-delay: 0.9s; }
+
+.sidebar .menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 10px;
+  width: 85%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar .menu i {
+  font-size: 16px;
+  color: #ff4d00;
+}
+
+/* Glowing Hover + Active Gradient */
+.sidebar .menu li.active a,
+.sidebar .menu a:hover {
+  background: linear-gradient(135deg, #ff4500 0%, #ff7a00 100%);
+  color: #fff;
+  box-shadow: 0 6px 25px rgba(255, 90, 0, 0.45);
+  border-radius: 10px;
+  transform: translateY(-2px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* =============================
+   Main Content
+============================= */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background: #f9fafb;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: mainFadeIn 1s ease-out 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* =============================
+   Listings Grid
+============================= */
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeInGrid 1s ease-out 0.6s forwards;
+}
+
+.listing-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: all 0.35s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardFadeIn 0.8s ease-out forwards;
+}
+
+.listing-card:nth-child(1) { animation-delay: 0.6s; }
+.listing-card:nth-child(2) { animation-delay: 0.7s; }
+.listing-card:nth-child(3) { animation-delay: 0.8s; }
+.listing-card:nth-child(4) { animation-delay: 0.9s; }
+
+.listing-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(255, 77, 0, 0.25);
+}
+
+.listing-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.listing-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.listing-info h3 {
+  color: #f83600;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.listing-info p {
+  color: #555;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.price {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* =============================
+   Action Buttons
+============================= */
+.listing-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px 15px;
+}
+
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  margin: 0 5px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background: #ff9800;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: #e68900;
+}
+
+.btn-delete {
+  background: #f83600;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background: #d12e00;
+}
+
+/* =============================
+   Animations
+============================= */
+@keyframes fadeInBody {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sidebarSlideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes menuFadeIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes mainFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInGrid {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================
+   Responsive
+============================= */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    padding: 20px;
+  }
+}
