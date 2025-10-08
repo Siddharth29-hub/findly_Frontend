@@ -1,81 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Owner Dashboard | Findly</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Owner Dashboard CSS -->
-  <link rel="stylesheet" href="../../css/owner-dashboard/owner-dashboard.css">
+  <link rel="stylesheet" href="../../css/owner-dashboard/owner-dashboard.css" />
 </head>
-
 <body>
-  <div class="owner-dashboard-container">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <img src="../../images/findly-full-logo.png" alt="Findly Logo">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+       <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
+      <h2>Findly Owner</h2>
+    </div>
+    <nav class="menu">
+      <a href="owner-dashboard.html" class="active">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="crm.html">CRM</a>
+      <a href="payments.html">Payments</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="system.html">System</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Section -->
+  <section class="main-content">
+    <header class="topbar">
+      <h1>Dashboard Overview</h1>
+      <div class="profile-area">
+        <img src="../../images/owner-profile.jpg" alt="Owner" />
+        <span>Hi, Owner</span>
       </div>
-      <ul class="menu">
-        <li class="active"><a href="owner-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
-        <li><a href="add-listing.html"><i class="fas fa-plus-circle"></i> Add Listing</a></li>
-        <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
-        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
-        <li><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-      </ul>
-    </aside>
+    </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <header class="topbar">
-        <h1>Welcome, <span>Owner</span></h1>
-        <div class="profile">
-          <img src="../../images/user1.jpg" alt="Owner" class="owner-logo">
-        </div>
-      </header>
+    <div class="dashboard-grid">
+      <div class="card orange">
+        <h2>12</h2>
+        <p>Total Listings</p>
+      </div>
 
-      <section class="stats">
-        <div class="card fade">
-          <i class="fas fa-building"></i>
-          <h3>Hostels</h3>
-          <p>4 Active Listings</p>
-        </div>
+      <div class="card blue">
+        <h2>98</h2>
+        <p>Monthly Bookings</p>
+      </div>
 
-        <div class="card fade">
-          <i class="fas fa-utensils"></i>
-          <h3>Mess</h3>
-          <p>2 Active Listings</p>
-        </div>
+      <div class="card green">
+        <h2>₹1,24,000</h2>
+        <p>Monthly Revenue</p>
+      </div>
 
-        <div class="card fade">
-          <i class="fas fa-chalkboard-teacher"></i>
-          <h3>Coaching</h3>
-          <p>3 Centers Listed</p>
-        </div>
+      <div class="card purple">
+        <h2>15</h2>
+        <p>Pending Leads</p>
+      </div>
+    </div>
 
-        <div class="card fade">
-          <i class="fas fa-university"></i>
-          <h3>Colleges</h3>
-          <p>1 Institution</p>
-        </div>
-      </section>
-    </main>
-  </div>
+    <div class="action-grid">
+      <a href="crm.html" class="action-card">Go to CRM</a>
+      <a href="payments.html" class="action-card">Payment Reports</a>
+      <a href="analytics.html" class="action-card">View Analytics</a>
+      <a href="system.html" class="action-card">System Health</a>
+    </div>
+  </section>
 
-  <!-- Fade-In Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".fade").forEach((el, index) => {
-        setTimeout(() => el.classList.add("visible"), 150 * index);
-      });
-    });
-  </script>
 </body>
 </html>

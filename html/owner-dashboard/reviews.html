@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews | Findly Owner</title>
+  <link rel="stylesheet" href="../../css/owner-dashboard/reviews.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
+    </div>
+    <nav class="menu">
+      <a href="owner-dashboard.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="crm.html">CRM</a>
+      <a href="payments.html">Payments</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="reviews.html" class="active">Reviews</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="system.html">System</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <section class="main-content">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <h1>Reviews & Feedback</h1>
+      <button class="export-btn">⬇ Export Reviews</button>
+    </div>
+
+    <!-- Overview Cards -->
+    <div class="review-overview">
+      <div class="review-card avg">
+        <h2>⭐ 4.6 / 5</h2>
+        <p>Average Rating</p>
+      </div>
+      <div class="review-card total">
+        <h2>342</h2>
+        <p>Total Reviews</p>
+      </div>
+      <div class="review-card approved">
+        <h2>310</h2>
+        <p>Approved</p>
+      </div>
+      <div class="review-card pending">
+        <h2>32</h2>
+        <p>Pending</p>
+      </div>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="search-filter">
+      <input type="text" placeholder="🔍 Search by user or service..." />
+      <select>
+        <option value="">Filter by Rating</option>
+        <option>5 Stars</option>
+        <option>4 Stars</option>
+        <option>3 Stars</option>
+        <option>2 Stars</option>
+        <option>1 Star</option>
+      </select>
+      <select>
+        <option value="">Filter by Service</option>
+        <option>Hostel</option>
+        <option>Mess</option>
+        <option>Coaching</option>
+      </select>
+    </div>
+
+    <!-- Review Cards Section -->
+    <div class="reviews-container">
+      <!-- Review Card 1 -->
+      <div class="review-item">
+        <div class="review-header">
+          <img src="../../images/avatar1.png" alt="User" class="avatar" />
+          <div>
+            <h3>Rahul Mehta <span class="service-tag">Hostel Room</span></h3>
+            <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+          </div>
+        </div>
+        <p class="review-text">“Excellent stay! Rooms were clean and well-maintained. Definitely recommend Findly-hosted hostels.”</p>
+        <div class="review-actions">
+          <button class="reply-btn">Reply</button>
+          <button class="approve-btn">Approve</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+
+      <!-- Review Card 2 -->
+      <div class="review-item">
+        <div class="review-header">
+          <img src="../../images/avatar2.png" alt="User" class="avatar" />
+          <div>
+            <h3>Simran Kaur <span class="service-tag">Mess Service</span></h3>
+            <div class="stars">⭐️⭐️⭐️⭐️</div>
+          </div>
+        </div>
+        <p class="review-text">“Food quality is great! Sometimes late deliveries, but overall a very good experience.”</p>
+        <div class="review-actions">
+          <button class="reply-btn">Reply</button>
+          <button class="approve-btn">Approve</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+
+      <!-- Review Card 3 -->
+      <div class="review-item">
+        <div class="review-header">
+          <img src="../../images/avatar3.png" alt="User" class="avatar" />
+          <div>
+            <h3>Priya Sharma <span class="service-tag">Coaching Class</span></h3>
+            <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+          </div>
+        </div>
+        <p class="review-text">“Coaching environment is friendly, teachers are experienced, and management is very supportive.”</p>
+        <div class="review-actions">
+          <button class="reply-btn">Reply</button>
+          <button class="approve-btn">Approve</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reply Modal -->
+  <div id="replyModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <div class="modal-header">
+        <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="modal-logo" />
+        <h2>Reply to Review</h2>
+      </div>
+      <textarea id="replyText" placeholder="Type your reply here..."></textarea>
+      <div class="modal-footer">
+        <button class="send-btn">Send Reply</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container"></div>
+
+  <!-- JavaScript -->
+  <script>
+    const toastContainer = document.querySelector('.toast-container');
+
+    function showToast(msg) {
+      const toast = document.createElement('div');
+      toast.classList.add('toast', 'show');
+      toast.textContent = msg;
+      toastContainer.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    // Modal Logic
+    const modal = document.getElementById('replyModal');
+    const closeModal = document.getElementById('closeModal');
+    const sendBtn = document.querySelector('.send-btn');
+
+    document.querySelectorAll('.reply-btn').forEach(btn => {
+      btn.addEventListener('click', () => modal.style.display = 'flex');
+    });
+
+    closeModal.onclick = () => modal.style.display = 'none';
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+
+    sendBtn.addEventListener('click', () => {
+      showToast('💬 Reply sent successfully!');
+      modal.style.display = 'none';
+    });
+
+    // Approve/Delete Logic
+    document.querySelectorAll('.approve-btn').forEach(btn => {
+      btn.addEventListener('click', () => showToast('✅ Review Approved!'));
+    });
+
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.target.closest('.review-item').remove();
+        showToast('❌ Review Deleted');
+      });
+    });
+  </script>
+
+</body>
+</html>

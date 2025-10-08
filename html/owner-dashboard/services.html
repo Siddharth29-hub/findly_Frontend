@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Findly Owner</title>
+  <link rel="stylesheet" href="../../css/owner-dashboard/services.css" />
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
+    </div>
+    <nav class="menu">
+      <a href="owner-dashboard.html">Dashboard</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="crm.html">CRM</a>
+      <a href="payments.html">Payments</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="system.html">System</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <section class="main-content">
+
+    <header class="topbar">
+      <h1>Manage Your Services</h1>
+      <button id="openModal" class="add-btn">+ Add New Service</button>
+    </header>
+
+    <!-- Service Cards -->
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h2>Findly Hostel</h2>
+        <p><strong>Type:</strong> Hostel</p>
+        <p><strong>Capacity:</strong> 120 Beds</p>
+
+        <div class="status-row">
+          <span class="status-label">Status: Active</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="btn-group">
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h2>Findly Mess</h2>
+        <p><strong>Type:</strong> Mess</p>
+        <p><strong>Capacity:</strong> 200 Meals/day</p>
+
+        <div class="status-row">
+          <span class="status-label">Status: Active</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="btn-group">
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h2>Findly Coaching</h2>
+        <p><strong>Type:</strong> Coaching</p>
+        <p><strong>Capacity:</strong> 300 Students</p>
+
+        <div class="status-row">
+          <span class="status-label">Status: Inactive</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="btn-group">
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Add Service Modal -->
+  <div id="serviceModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <h2>Add New Service</h2>
+
+      <form class="modal-form">
+        <label>Service Name</label>
+        <input type="text" placeholder="Enter service name" required>
+
+        <label>Type</label>
+        <select required>
+          <option value="">Select Type</option>
+          <option>Hostel</option>
+          <option>Mess</option>
+          <option>Coaching</option>
+        </select>
+
+        <label>Capacity</label>
+        <input type="text" placeholder="Enter capacity" required>
+
+        <label>Status</label>
+        <select required>
+          <option>Active</option>
+          <option>Inactive</option>
+        </select>
+
+        <div class="modal-actions">
+          <button type="submit" class="save-btn">Save Service</button>
+          <button type="button" id="cancelModal" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Modal Logic
+    const modal = document.getElementById("serviceModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const cancelModal = document.getElementById("cancelModal");
+
+    openModal.onclick = () => modal.style.display = "flex";
+    closeModal.onclick = () => modal.style.display = "none";
+    cancelModal.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+    // Toast Container
+    const toastContainer = document.createElement("div");
+    toastContainer.classList.add("toast-container");
+    document.body.appendChild(toastContainer);
+
+    // Toast Function
+    function showToast(message, type = "success") {
+      const toast = document.createElement("div");
+      toast.classList.add("toast", type);
+      toast.innerText = message;
+      toastContainer.appendChild(toast);
+
+      // Show Animation
+      setTimeout(() => toast.classList.add("show"), 100);
+
+      // Remove after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // Toggle Switch Logic
+    const switches = document.querySelectorAll(".switch input");
+    switches.forEach(sw => {
+      sw.addEventListener("change", () => {
+        const card = sw.closest(".service-card");
+        const statusLabel = card.querySelector(".status-label");
+        const isActive = sw.checked;
+
+        statusLabel.textContent = `Status: ${isActive ? "Active" : "Inactive"}`;
+
+        // Toast Message
+        if (isActive) {
+          showToast("✅ Service Activated Successfully", "success");
+        } else {
+          showToast("⚠️ Service Deactivated", "error");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

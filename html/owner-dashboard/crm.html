@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM | Findly Owner</title>
+  <link rel="stylesheet" href="../../css/owner-dashboard/crm.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
+    </div>
+    <nav class="menu">
+      <a href="owner-dashboard.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="crm.html" class="active">CRM</a>
+      <a href="payments.html">Payments</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="system.html">System</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Section -->
+  <section class="main-content">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <h1>Lead Management & CRM</h1>
+      <button id="openModal" class="add-lead-btn">+ Add New Lead</button>
+    </div>
+
+    <!-- Overview Cards -->
+    <div class="lead-overview">
+      <div class="lead-card new">
+        <h2>12</h2>
+        <p>New Leads</p>
+      </div>
+      <div class="lead-card active">
+        <h2>25</h2>
+        <p>Active Leads</p>
+      </div>
+      <div class="lead-card converted">
+        <h2>9</h2>
+        <p>Converted Leads</p>
+      </div>
+      <div class="lead-card closed">
+        <h2>4</h2>
+        <p>Closed Leads</p>
+      </div>
+    </div>
+
+    <!-- Search + Filter -->
+    <div class="search-filter">
+      <input type="text" placeholder="🔍 Search Leads..." />
+      <select>
+        <option value="">Filter by Status</option>
+        <option>New</option>
+        <option>Active</option>
+        <option>Converted</option>
+        <option>Closed</option>
+      </select>
+    </div>
+
+    <!-- Status Legend -->
+    <div class="status-legend">
+      <div><span class="legend new"></span> New</div>
+      <div><span class="legend active"></span> Active</div>
+      <div><span class="legend converted"></span> Converted</div>
+      <div><span class="legend closed"></span> Closed</div>
+    </div>
+
+    <!-- Lead Table -->
+    <div class="lead-table-container">
+      <table class="lead-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Source</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rahul Mehta</td>
+            <td>Hostel</td>
+            <td>+91 9876543210</td>
+            <td>rahul@example.com</td>
+            <td><span class="status new">New</span></td>
+            <td>Website</td>
+            <td>
+              <button class="action-btn convert">Convert</button>
+              <button class="action-btn close">Close</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Priya Sharma</td>
+            <td>Coaching</td>
+            <td>+91 9812345678</td>
+            <td>priya@example.com</td>
+            <td><span class="status active">Active</span></td>
+            <td>Referral</td>
+            <td>
+              <button class="action-btn convert">Convert</button>
+              <button class="action-btn close">Close</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Rohit Verma</td>
+            <td>Mess</td>
+            <td>+91 9654321870</td>
+            <td>rohitv@example.com</td>
+            <td><span class="status converted">Converted</span></td>
+            <td>Walk-in</td>
+            <td>
+              <button class="action-btn convert">Convert</button>
+              <button class="action-btn close">Close</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Simran Kaur</td>
+            <td>Hostel</td>
+            <td>+91 9876123456</td>
+            <td>simran@example.com</td>
+            <td><span class="status closed">Closed</span></td>
+            <td>Website</td>
+            <td>
+              <button class="action-btn convert">Convert</button>
+              <button class="action-btn close">Close</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Aditya Jain</td>
+            <td>Mess</td>
+            <td>+91 9823456789</td>
+            <td>aditya@example.com</td>
+            <td><span class="status active">Active</span></td>
+            <td>Referral</td>
+            <td>
+              <button class="action-btn convert">Convert</button>
+              <button class="action-btn close">Close</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- Modal (Add Lead) -->
+  <div id="leadModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <h2>Add New Lead</h2>
+
+      <form class="modal-form">
+        <label>Lead Name</label>
+        <input type="text" placeholder="Enter name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" required>
+
+        <label>Contact</label>
+        <input type="text" placeholder="Enter contact number" required>
+
+        <label>Type</label>
+        <select required>
+          <option value="">Select Type</option>
+          <option>Hostel</option>
+          <option>Mess</option>
+          <option>Coaching</option>
+        </select>
+
+        <label>Source</label>
+        <select required>
+          <option>Website</option>
+          <option>Referral</option>
+          <option>Walk-in</option>
+        </select>
+
+        <label>Status</label>
+        <select required>
+          <option>New</option>
+          <option>Active</option>
+          <option>Converted</option>
+          <option>Closed</option>
+        </select>
+
+        <div class="modal-actions">
+          <button type="submit" class="save-btn">Save Lead</button>
+          <button type="button" id="cancelModal" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== Modal Logic =====
+    const modal = document.getElementById("leadModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const cancelModal = document.getElementById("cancelModal");
+
+    openModal.onclick = () => modal.style.display = "flex";
+    closeModal.onclick = () => modal.style.display = "none";
+    cancelModal.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+    // ===== Toast Container =====
+    const toastContainer = document.createElement("div");
+    toastContainer.classList.add("toast-container");
+    document.body.appendChild(toastContainer);
+
+    function showToast(message, type = "success") {
+      const toast = document.createElement("div");
+      toast.classList.add("toast", type);
+      toast.innerText = message;
+      toastContainer.appendChild(toast);
+
+      setTimeout(() => toast.classList.add("show"), 100);
+      setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // ===== Dynamic Lead Management =====
+    const table = document.querySelector(".lead-table");
+    const overviewCards = {
+      new: document.querySelector(".lead-card.new h2"),
+      active: document.querySelector(".lead-card.active h2"),
+      converted: document.querySelector(".lead-card.converted h2"),
+      closed: document.querySelector(".lead-card.closed h2"),
+    };
+
+    // Function to Recalculate Counts
+    function updateCounts() {
+      const allStatuses = Array.from(document.querySelectorAll(".lead-table .status"))
+        .map(cell => cell.textContent.trim().toLowerCase());
+
+      const counts = {
+        new: allStatuses.filter(s => s === "new").length,
+        active: allStatuses.filter(s => s === "active").length,
+        converted: allStatuses.filter(s => s === "converted").length,
+        closed: allStatuses.filter(s => s === "closed").length,
+      };
+
+      overviewCards.new.textContent = counts.new;
+      overviewCards.active.textContent = counts.active;
+      overviewCards.converted.textContent = counts.converted;
+      overviewCards.closed.textContent = counts.closed;
+
+      Object.values(overviewCards).forEach(card => {
+        card.classList.add("updated");
+        setTimeout(() => card.classList.remove("updated"), 600);
+      });
+    }
+
+    // Initial count update
+    updateCounts();
+
+    // Table Action Logic
+    table.addEventListener("click", function (e) {
+      if (e.target.classList.contains("convert")) {
+        const row = e.target.closest("tr");
+        const statusCell = row.querySelector(".status");
+        statusCell.textContent = "Converted";
+        statusCell.className = "status converted";
+        showToast("✅ Lead Converted Successfully", "success");
+        updateCounts();
+      }
+
+      if (e.target.classList.contains("close")) {
+        const row = e.target.closest("tr");
+        const statusCell = row.querySelector(".status");
+        statusCell.textContent = "Closed";
+        statusCell.className = "status closed";
+        showToast("⚠️ Lead Closed Successfully", "error");
+        updateCounts();
+      }
+    });
+  </script>
+</body>
+</html>

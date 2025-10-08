@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Findly Owner</title>
+  <link rel="stylesheet" href="../../css/owner-dashboard/profile.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
+    </div>
+    <nav class="menu">
+      <a href="owner-dashboard.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="crm.html">CRM</a>
+      <a href="payments.html">Payments</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="system.html">System</a>
+      <a href="profile.html" class="active">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <div class="topbar">
+      <h1>My Profile & Account Settings</h1>
+      <button class="edit-btn">✏️ Edit Profile</button>
+    </div>
+
+    <!-- Profile Header -->
+    <div class="profile-header fadeUp">
+      <img src="../../images/owner-avatar.png" alt="Owner Avatar" class="profile-photo" />
+      <h2>Siddharth Sharma</h2>
+      <p class="role">Owner | Admin</p>
+      <p class="contact">📧 siddharth@findly.com | 📞 +91 9876543210</p>
+      <small>Joined on: 15 March 2024</small>
+    </div>
+
+    <!-- Info Grid -->
+    <div class="info-grid">
+      <div class="info-card fadeUp delay1">
+        <h3>👤 Personal Information</h3>
+        <div class="info-row"><span>Name:</span> Siddharth Sharma</div>
+        <div class="info-row"><span>Email:</span> siddharth@findly.com</div>
+        <div class="info-row"><span>Mobile:</span> +91 9876543210</div>
+        <div class="info-row"><span>Address:</span> Indore, Madhya Pradesh</div>
+      </div>
+
+      <div class="info-card fadeUp delay2">
+        <h3>🏢 Business Information</h3>
+        <div class="info-row"><span>Business Name:</span> Findly Private Limited</div>
+        <div class="info-row"><span>Category:</span> Student Housing & Services</div>
+        <div class="info-row"><span>Total Listings:</span> 48</div>
+        <div class="info-row"><span>Rating:</span> ⭐ 4.8 / 5</div>
+      </div>
+    </div>
+
+    <!-- Settings Buttons -->
+    <div class="settings-row fadeUp delay3">
+      <button class="settings-btn orange">🔑 Change Password</button>
+      <button class="settings-btn blue">🧾 Update Profile</button>
+      <button class="settings-btn red">🚪 Logout</button>
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div class="toast-container"></div>
+
+  <!-- Script -->
+  <script>
+    const toastContainer = document.querySelector('.toast-container');
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.classList.add('toast', 'show');
+      toast.textContent = message;
+      toastContainer.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    document.querySelector('.orange').addEventListener('click', () => showToast('🔑 Password change requested.'));
+    document.querySelector('.blue').addEventListener('click', () => showToast('🧾 Profile update request sent.'));
+    document.querySelector('.red').addEventListener('click', () => showToast('🚪 Logged out successfully.'));
+    document.querySelector('.edit-btn').addEventListener('click', () => showToast('✏️ Edit Profile coming soon.'));
+  </script>
+
+</body>
+</html>

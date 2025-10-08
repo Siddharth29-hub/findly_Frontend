@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Management | Findly Owner</title>
+  <link rel="stylesheet" href="../../css/owner-dashboard/system.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
+    </div>
+    <nav class="menu">
+      <a href="owner-dashboard.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="crm.html">CRM</a>
+      <a href="payments.html">Payments</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="system.html" class="active">System</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <div class="topbar">
+      <h1>System Control & Health Overview</h1>
+      <button class="refresh-btn">🔄 Refresh Status</button>
+    </div>
+
+    <!-- System Health Cards -->
+    <div class="system-health">
+      <div class="health-card server">
+        <div class="icon">🖥️</div>
+        <h3>Server Uptime</h3>
+        <p>Status: <span class="status active">Active</span></p>
+        <small>Uptime: 99.97%</small>
+      </div>
+      <div class="health-card api">
+        <div class="icon">🌐</div>
+        <h3>API Connectivity</h3>
+        <p>Status: <span class="status active">Connected</span></p>
+        <small>Response: 210ms</small>
+      </div>
+      <div class="health-card db">
+        <div class="icon">🗄️</div>
+        <h3>Database Connection</h3>
+        <p>Status: <span class="status active">Stable</span></p>
+        <small>Queries: 34/min</small>
+      </div>
+      <div class="health-card storage">
+        <div class="icon">💾</div>
+        <h3>Storage Usage</h3>
+        <p>Status: <span class="status warning">72% Used</span></p>
+        <small>Remaining: 28 GB</small>
+      </div>
+    </div>
+
+    <!-- Control Panel Buttons -->
+    <div class="control-actions">
+      <button class="action-btn restart">🔁 Restart Server</button>
+      <button class="action-btn cache">🧹 Clear Cache</button>
+      <button class="action-btn report">🧾 Generate Report</button>
+    </div>
+
+    <!-- System Logs -->
+    <div class="system-logs">
+      <h2>Recent System Logs</h2>
+      <table class="logs-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Component</th>
+            <th>Action</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10:05 AM</td>
+            <td>Server</td>
+            <td>Restart</td>
+            <td><span class="log-status success">Success</span></td>
+          </tr>
+          <tr>
+            <td>10:10 AM</td>
+            <td>API</td>
+            <td>Ping Test</td>
+            <td><span class="log-status active">Active</span></td>
+          </tr>
+          <tr>
+            <td>10:15 AM</td>
+            <td>Database</td>
+            <td>Backup</td>
+            <td><span class="log-status success">Complete</span></td>
+          </tr>
+          <tr>
+            <td>10:20 AM</td>
+            <td>Storage</td>
+            <td>Cleanup</td>
+            <td><span class="log-status warning">Partial</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container"></div>
+
+  <!-- JavaScript -->
+  <script>
+    const toastContainer = document.querySelector('.toast-container');
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.classList.add('toast', 'show');
+      toast.textContent = message;
+      toastContainer.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    // Action buttons
+    document.querySelector('.restart').addEventListener('click', () => {
+      showToast('🖥️ Server restarting...');
+    });
+    document.querySelector('.cache').addEventListener('click', () => {
+      showToast('🧹 Cache cleared successfully!');
+    });
+    document.querySelector('.report').addEventListener('click', () => {
+      showToast('📄 System health report generated.');
+    });
+    document.querySelector('.refresh-btn').addEventListener('click', () => {
+      showToast('🔄 System statuses refreshed!');
+    });
+  </script>
+
+</body>
+</html>

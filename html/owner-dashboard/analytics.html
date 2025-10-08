@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics & Reports | Findly Owner</title>
+  <link rel="stylesheet" href="../../css/owner-dashboard/analytics.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo">
+    </div>
+    <nav class="menu">
+      <a href="owner-dashboard.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="crm.html">CRM</a>
+      <a href="payments.html">Payments</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="analytics.html" class="active">Analytics</a>
+      <a href="system.html">System</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <div class="topbar">
+      <h1>Analytics & Reports Overview</h1>
+      <button class="download-btn">📄 Download Report</button>
+    </div>
+
+    <!-- Overview Cards -->
+    <div class="metrics-overview">
+      <div class="metric-card fadeIn">
+        <h2>12</h2>
+        <p>Total Listings</p>
+      </div>
+      <div class="metric-card fadeIn delay1">
+        <h2>98</h2>
+        <p>Monthly Bookings</p>
+      </div>
+      <div class="metric-card fadeIn delay2">
+        <h2>₹1,24,000</h2>
+        <p>Monthly Revenue</p>
+      </div>
+      <div class="metric-card fadeIn delay3">
+        <h2>78%</h2>
+        <p>Leads Converted</p>
+      </div>
+    </div>
+
+    <!-- Analytics Grid -->
+    <div class="analytics-grid">
+
+      <div class="report-card fadeUp">
+        <h3>📈 Booking Growth Trend</h3>
+        <div class="chart-placeholder">
+          <p>Booking data visualization will appear here.</p>
+        </div>
+      </div>
+
+      <div class="report-card fadeUp delay1">
+        <h3>💰 Revenue Insights</h3>
+        <div class="chart-placeholder">
+          <p>Revenue trends by service (Hostel, Mess, Coaching)</p>
+        </div>
+      </div>
+
+      <div class="report-card fadeUp delay2">
+        <h3>🎯 Conversion Funnel</h3>
+        <div class="chart-placeholder">
+          <p>Leads → Bookings → Payments → Repeat Clients</p>
+        </div>
+      </div>
+
+      <div class="report-card fadeUp delay3">
+        <h3>🏆 Top Performing Services</h3>
+        <ul class="top-services">
+          <li><span>🏠 Hostel Service</span><strong>45%</strong></li>
+          <li><span>🍽️ Mess Service</span><strong>35%</strong></li>
+          <li><span>📚 Coaching</span><strong>20%</strong></li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Toast Notification -->
+  <div class="toast-container"></div>
+
+  <script>
+    // Toast
+    const toastContainer = document.querySelector('.toast-container');
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.classList.add('toast', 'show');
+      toast.textContent = message;
+      toastContainer.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    document.querySelector('.download-btn').addEventListener('click', () => {
+      showToast('📄 Report downloaded successfully!');
+    });
+  </script>
+
+</body>
+</html>
