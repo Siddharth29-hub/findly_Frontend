@@ -1,0 +1,86 @@
+/* ---------------- RESET & VARIABLES ---------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+--accent: #f83600;
+--accent-2: #ff6a00;
+--card: #fff;
+--bg: #f3f7fb;
+--text: #0b0b0b;
+--muted: #6b7280;
+--shadow: rgba(8,20,40,0.08);
+}
+
+
+/* ---------------- BASE ---------------- */
+html,body{ height:100%; font-family: "Inter", system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:var(--bg); color:var(--text); }
+
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar{ position:fixed; left:20px; top:20px; bottom:20px; width:240px; background:rgba(178,190,196,0.25); backdrop-filter: blur(10px); border-radius:12px; padding:20px; box-shadow:0 8px 24px var(--shadow); }
+.brand{ display:flex; justify-content:center; margin-bottom:18px; }
+.brand-logo{ width:120px; height:auto; object-fit:contain; }
+.nav-list{ list-style:none; }
+.nav-list li{ margin-bottom:8px; }
+.nav-list a{ color:inherit; text-decoration:none; display:block; padding:10px; border-radius:8px; transition:background .2s; }
+.nav-list li.active a, .nav-list a:hover{ background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; }
+
+
+
+
+/* ---------------- MAIN ---------------- */
+.main{ margin-left:280px; padding:28px; min-height:100vh; }
+.page-header h1{ font-size:28px; margin-bottom:6px; }
+.page-header .subtitle{ color:var(--muted); font-size:14px; margin-bottom:18px; }
+
+
+/* actions row */
+.actions-row{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:20px; }
+.search-box input{ width:420px; max-width:60vw; padding:10px 14px; border-radius:10px; border:1px solid rgba(0,0,0,0.06); background:#fff; }
+.filters{ display:flex; gap:10px; align-items:center; }
+.filters select{ padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.06); }
+
+
+/* buttons (styled like service cards interaction) */
+.btn{ background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; box-shadow:0 6px 18px rgba(248,54,0,0.12); transition: transform .18s ease, box-shadow .18s ease; }
+.btn:hover{ transform: translateY(-3px); box-shadow:0 12px 30px rgba(248,54,0,0.16); }
+.btn.outline{ background:transparent; color:var(--text); border:1px solid rgba(11,11,11,0.08); box-shadow:none; }
+.btn.outline:hover{ background:rgba(0,0,0,0.04); }
+.btn.small{ padding:6px 8px; font-size:13px; border-radius:8px; }
+.btn.primary{ padding:11px 16px; }
+
+
+/* ---------------- BOOKING CARDS ---------------- */
+.card-list .section-title{ font-size:18px; margin-bottom:12px; }
+.booking-cards{ display:flex; flex-direction:column; gap:14px; }
+.booking-card{ display:flex; align-items:center; gap:16px; background:var(--card); border-radius:14px; padding:12px; box-shadow:0 6px 20px var(--shadow); transition: transform .2s ease, box-shadow .2s ease; }
+.booking-card:hover{ transform: translateY(-6px); box-shadow:0 12px 30px rgba(8,20,40,0.12); }
+.booking-card .thumb img{ width:120px; height:90px; object-fit:cover; border-radius:10px; }
+.booking-info h3{ font-size:16px; margin-bottom:4px; }
+.booking-info .muted{ color:var(--muted); font-size:13px; margin-bottom:8px; }
+.meta{ display:flex; gap:12px; flex-wrap:wrap; font-size:13px; color:var(--muted); }
+.card-actions{ margin-left:auto; display:flex; gap:10px; align-items:center; }
+.status{ padding:6px 8px; border-radius:10px; font-weight:600; font-size:13px; }
+.status.confirmed{ background: linear-gradient(90deg,#dff6ec,#d4f3e6); color:#0a7a4a; }
+.status.pending{ background:#fff7e6; color:#a66a00; }
+
+
+
+/* ---------------- HISTORY TABLE ---------------- */
+.history .section-title{ font-size:18px; margin:18px 0 12px 0; }
+.history-card{ background:var(--card); padding:14px; border-radius:12px; box-shadow:0 8px 24px var(--shadow); }
+.history-table{ width:100%; border-collapse:collapse; font-size:14px; }
+.history-table thead th{ text-align:left; padding:10px; color:var(--muted); font-size:13px; }
+.history-table tbody td{ padding:12px 10px; border-top:1px solid rgba(11,11,11,0.04); }
+.status.completed{ background:linear-gradient(90deg,#dff6ec,#d4f3e6); color:#0a7a4a; padding:6px 8px; border-radius:8px; }
+.status.cancelled{ background:#ffecec; color:#a11; padding:6px 8px; border-radius:8px; }
+
+
+/* responsive */
+@media (max-width:900px){
+.sidebar{ position:static; width:100%; margin:12px; }
+.main{ margin-left:0; padding:16px; }
+.actions-row{ flex-direction:column; align-items:flex-start; }
+.search-box input{ width:100%; }
+.card-actions{ margin-top:10px; width:100%; }
+.booking-card{ flex-direction:column; align-items:flex-start; }
+}

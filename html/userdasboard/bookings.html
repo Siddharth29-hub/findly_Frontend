@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Findly — My Bookings</title>
+  <link rel="stylesheet" href="../../css/userdashboard/bookings.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="brand-logo" />
+    </div>
+    <ul class="nav-list">
+      <li><a href="dashboardindex.html">Dashboard</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li class="active"><a href="bookings.html">Bookings</a></li>
+      <li><a href="payment.html">Payment</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <header class="page-header">
+      <h1>My Bookings</h1>
+      <p class="subtitle">Manage upcoming reservations and view booking history.</p>
+    </header>
+
+    <!-- Actions -->
+    <section class="actions-row">
+      <div class="search-box">
+        <input type="search" placeholder="Search by service, id or city" />
+      </div>
+      <div class="filters">
+        <select>
+          <option>All Status</option>
+          <option>Confirmed</option>
+          <option>Pending</option>
+          <option>Cancelled</option>
+        </select>
+        <button class="btn primary">New Booking</button>
+      </div>
+    </section>
+
+    <!-- Upcoming Bookings -->
+    <section class="card-list">
+      <h2 class="section-title">Upcoming Bookings</h2>
+
+      <div class="booking-cards">
+        <!-- Single booking card -->
+        <article class="booking-card">
+          <div class="thumb">
+            <img src="https://i.imgur.com/wUhtyHw.jpg" alt="Hostel" />
+          </div>
+          <div class="booking-info">
+            <h3>Sunrise Hostel</h3>
+            <p class="muted">Hostel • Kothrud, Pune</p>
+            <div class="meta">
+              <span><strong>Booking ID:</strong> BK1023</span>
+              <span><strong>From:</strong> 10 Oct 2025</span>
+              <span><strong>To:</strong> 09 Jan 2026</span>
+              <span class="status confirmed">Confirmed</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn outline">View</button>
+            <button class="btn">Cancel</button>
+          </div>
+        </article>
+
+        <article class="booking-card">
+          <div class="thumb">
+            <img src="https://i.imgur.com/3iV2T3K.jpg" alt="Mess" />
+          </div>
+          <div class="booking-info">
+            <h3>Yummy Mess — Monthly Plan</h3>
+            <p class="muted">Mess • Near College Canteen</p>
+            <div class="meta">
+              <span><strong>Booking ID:</strong> BK1091</span>
+              <span><strong>From:</strong> 01 Nov 2025</span>
+              <span><strong>To:</strong> 30 Nov 2025</span>
+              <span class="status pending">Pending</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn outline">Pay</button>
+            <button class="btn">Message Owner</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Booking History -->
+    <section class="history">
+      <h2 class="section-title">Booking History</h2>
+
+      <div class="history-card">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Service</th>
+              <th>Location</th>
+              <th>Dates</th>
+              <th>Amount</th>
+              <th>Payment</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BK0987</td>
+              <td>City PG</td>
+              <td>Pune, Shivaji Nagar</td>
+              <td>02 Jun 2025 — 02 Sep 2025</td>
+              <td>₹12,000</td>
+              <td>Paid</td>
+              <td class="status completed">Completed</td>
+              <td>
+                <button class="btn outline small">Invoice</button>
+                <button class="btn small">Rebook</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>BK0944</td>
+              <td>Study Library</td>
+              <td>Pune, Kalyani Nagar</td>
+              <td>15 Mar 2025 — 15 Apr 2025</td>
+              <td>₹1,200</td>
+              <td>Refunded</td>
+              <td class="status cancelled">Cancelled</td>
+              <td>
+                <button class="btn outline small">Details</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
