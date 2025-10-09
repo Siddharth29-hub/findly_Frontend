@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform Control | Findly Admin</title>
+  <link rel="stylesheet" href="../../css/admin-dashboard/platform-control.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
+    </div>
+    <nav class="menu">
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="platform-control.html" class="active">Platform Control</a>
+      <a href="user-management.html">User Management</a>
+      <a href="service-management.html">Service Management</a>
+      <a href="admin-analytics.html">Analytics</a>
+      <a href="admin-communication.html">Communication</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <div class="topbar">
+      <h1>Platform Control Center</h1>
+      <button class="action-btn">+ Add New Service Category</button>
+    </div>
+
+    <div class="overview-section">
+      <div class="card"><h2>12</h2><p>Pending Approvals</p></div>
+      <div class="card"><h2>136</h2><p>Active Owners</p></div>
+      <div class="card"><h2>8,421</h2><p>Total Users</p></div>
+      <div class="card"><h2>7</h2><p>Suspended Accounts</p></div>
+    </div>
+
+    <!-- Owner Approvals -->
+    <div class="tab-content active" id="owners">
+      <h2>Owner Approvals</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Owner Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#O1021</td>
+            <td>Rahul Mehta</td>
+            <td>rahul@findly.com</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>
+              <button class="approve">Approve</button>
+              <button class="reject">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>#O1022</td>
+            <td>Riya Sharma</td>
+            <td>riya@findly.com</td>
+            <td><span class="status approved">Approved</span></td>
+            <td><button class="suspend">Suspend</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Global Settings -->
+    <div class="tab-content" id="settings">
+      <h2>Global Settings</h2>
+      <div class="settings-card">
+        <p><strong>Platform Commission:</strong> 10%</p>
+        <p><strong>Default Categories:</strong> Hostel, Mess, Coaching</p>
+        <p><strong>Currency:</strong> INR (₹)</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

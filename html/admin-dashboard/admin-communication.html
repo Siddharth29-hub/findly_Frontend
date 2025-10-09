@@ -3,216 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Communication & Support Overview | Findly Admin</title>
+  <title>Communication Hub | Findly Admin</title>
   <link rel="stylesheet" href="../../css/admin-dashboard/admin-communication.css" />
 </head>
-
 <body>
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="logo">
-      <img src="assets/logo.png" alt="Findly Logo" />
-      <h2>Findly Admin</h2>
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
     </div>
     <nav class="menu">
-      <a href="admin-dashboard.html">Dashboard Overview</a>
-      <a href="admin-platform-control.html">Platform Control</a>
-      <a href="admin-analytics-reports.html">Analytics & Reports</a>
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="platform-control.html">Platform Control</a>
+      <a href="user-management.html">User Management</a>
+      <a href="service-management.html">Service Management</a>
+      <a href="admin-analytics.html">Analytics</a>
       <a href="admin-communication.html" class="active">Communication</a>
-      <a href="#" class="logout">Logout</a>
+      <a href="profile.html">Profile</a>
     </nav>
   </aside>
 
   <!-- Main Content -->
-  <main class="main-content">
-    <!-- Topbar -->
+  <section class="main-content">
     <div class="topbar">
-      <h1 class="page-title">Communication & Support Overview</h1>
-      <div class="topbar-icons">
-        <span class="icon">🔔</span>
-        <span class="icon">⚙️</span>
-        <div class="profile">
-          <img src="assets/profile.jpg" alt="Admin" />
-          <span>Admin</span>
+      <h1>Findly Communication Hub</h1>
+      <button class="action-btn" id="openModalBtn">+ Post Announcement</button>
+    </div>
+
+    <!-- Announcements Section -->
+    <div class="section-header">
+      <h2>📢 Announcements Board</h2>
+      <p>Stay updated with platform-wide communications and admin notices.</p>
+    </div>
+    <div class="announcement-grid">
+      <div class="announcement-card">
+        <div class="icon">⚡</div>
+        <div class="content">
+          <h3>Platform Maintenance Scheduled</h3>
+          <p>The Findly system will be under maintenance on Oct 12 from 2:00–4:00 AM IST.</p>
+          <span>Posted on: Oct 8, 2025</span>
+        </div>
+      </div>
+      <div class="announcement-card">
+        <div class="icon">🎉</div>
+        <div class="content">
+          <h3>New Verification Policy Update</h3>
+          <p>Owner onboarding process upgraded for faster document verification.</p>
+          <span>Posted on: Oct 5, 2025</span>
         </div>
       </div>
     </div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-      <h2 class="fancy-heading">
-        <span class="line-accent"></span>
-        <span>Connect with</span>
-        <span class="highlight-text">Users & Owners</span> – Resolve Issues & Share Updates
-      </h2>
-      <p class="subtext">
-        Manage user feedback, send platform announcements, and maintain FAQs.
-      </p>
-    </section>
-
-    <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab active">💬 Complaints & Feedback</button>
-      <button class="tab">📢 Announcements</button>
-      <button class="tab">📧 Promotional Emails</button>
-      <button class="tab">🖼️ Banners & FAQs</button>
+    <!-- Message Center -->
+    <div class="section-header">
+      <h2>💬 Message Center</h2>
+      <p>Recent owner and user communications.</p>
+    </div>
+    <div class="message-board">
+      <div class="message-card owner">
+        <h4>Ravi Kumar (Owner)</h4>
+        <p>“Please review my hostel listing approval request.”</p>
+        <span>Today, 10:42 AM</span>
+      </div>
+      <div class="message-card user">
+        <h4>Ananya Singh (User)</h4>
+        <p>“Can you confirm my payment receipt for booking ID #F102?”</p>
+        <span>Yesterday, 6:18 PM</span>
+      </div>
     </div>
 
-    <!-- Tab Content -->
-    <div class="tab-content">
-
-      <!-- Complaints & Feedback -->
-      <div class="tab-panel active">
-        <h3>💬 Complaints & Feedback</h3>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>User Name</th>
-                <th>Email</th>
-                <th>Message</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Aarav Jain</td>
-                <td>aarav@gmail.com</td>
-                <td>Payment failed for booking.</td>
-                <td>08 Oct 2025</td>
-                <td><span class="status pending">Pending</span></td>
-                <td>
-                  <button class="btn-resolve">Resolve</button>
-                  <button class="btn-delete">Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Simran Kaur</td>
-                <td>simran@gmail.com</td>
-                <td>Unable to upload hostel images.</td>
-                <td>07 Oct 2025</td>
-                <td><span class="status resolved">Resolved</span></td>
-                <td>
-                  <button class="btn-resolve">Resolve</button>
-                  <button class="btn-delete">Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <!-- Feedback Wall -->
+    <div class="section-header">
+      <h2>⭐ User Feedback Wall</h2>
+      <p>What users and owners say about Findly.</p>
+    </div>
+    <div class="feedback-wall">
+      <div class="feedback-tile">
+        <p>“Findly helped me find a perfect hostel within 2 days! Amazing platform.”</p>
+        <span>– Riya Sharma</span>
       </div>
-
-      <!-- Announcements -->
-      <div class="tab-panel">
-        <h3>📢 Announcements & Updates</h3>
-        <form class="announcement-form">
-          <input type="text" placeholder="Announcement Title" required />
-          <textarea rows="4" placeholder="Write your announcement here..." required></textarea>
-          <button class="btn-publish">Publish Announcement</button>
-        </form>
-
-        <div class="table-wrapper">
-          <h4>Recent Announcements</h4>
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Platform Maintenance Notice</td>
-                <td>06 Oct 2025</td>
-                <td><span class="status published">Published</span></td>
-              </tr>
-              <tr>
-                <td>New Hostel Listing Rules</td>
-                <td>01 Oct 2025</td>
-                <td><span class="status draft">Draft</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Promotional Emails -->
-      <div class="tab-panel">
-        <h3>📧 Promotional Emails</h3>
-        <form class="email-form">
-          <input type="text" placeholder="Email Subject" required />
-          <textarea rows="4" placeholder="Write your promotional message..." required></textarea>
-          <select required>
-            <option value="" disabled selected>Select Target Audience</option>
-            <option>All Users</option>
-            <option>Owners</option>
-            <option>Both</option>
-          </select>
-          <button class="btn-send">Send Notification</button>
-        </form>
-      </div>
-
-      <!-- Banners & FAQs -->
-      <div class="tab-panel">
-        <h3>🖼️ Banners & FAQs</h3>
-        <div class="banner-upload">
-          <label>Upload New Homepage Banner:</label>
-          <input type="file" />
-          <button class="btn-upload">Upload Banner</button>
-        </div>
-
-        <div class="faq-section">
-          <h4>Add New FAQ</h4>
-          <input type="text" placeholder="Question" required />
-          <textarea rows="3" placeholder="Answer" required></textarea>
-          <button class="btn-save-faq">Save FAQ</button>
-        </div>
-
-        <div class="table-wrapper">
-          <h4>Existing FAQs</h4>
-          <table>
-            <thead>
-              <tr>
-                <th>Question</th>
-                <th>Answer</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>How can owners register their services?</td>
-                <td>Owners can sign up and submit verification documents for admin approval.</td>
-              </tr>
-              <tr>
-                <td>Can users cancel bookings?</td>
-                <td>Yes, users can cancel before 24 hours of check-in through their dashboard.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="feedback-tile">
+        <p>“Owner dashboard is super simple and powerful!”</p>
+        <span>– Mehul Patel</span>
       </div>
     </div>
-  </main>
+  </section>
 
-  <!-- Tab Switching Script -->
+  <!-- Announcement Modal -->
+  <div class="modal" id="announcementModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <h2>Post New Announcement</h2>
+      <form class="modal-form">
+        <label>Title</label>
+        <input type="text" placeholder="Enter announcement title..." required />
+
+        <label>Message</label>
+        <textarea placeholder="Type your announcement details..." rows="4" required></textarea>
+
+        <label>Date</label>
+        <input type="date" required />
+
+        <div class="modal-actions">
+          <button type="submit" class="save-btn">Post</button>
+          <button type="button" class="cancel-btn" id="cancelModalBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS -->
   <script>
-    const tabs = document.querySelectorAll(".tab");
-    const panels = document.querySelectorAll(".tab-panel");
+    const modal = document.getElementById("announcementModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
+    const cancelBtn = document.getElementById("cancelModalBtn");
 
-    tabs.forEach((tab, index) => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        panels.forEach(p => p.classList.remove("active"));
-        tab.classList.add("active");
-        panels[index].classList.add("active");
-      });
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "flex";
     });
 
-    // Show first tab by default
-    tabs[0].classList.add("active");
-    panels[0].classList.add("active");
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    cancelBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
   </script>
 </body>
 </html>
