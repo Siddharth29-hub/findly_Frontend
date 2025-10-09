@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Management | Findly Admin</title>
+  <link rel="stylesheet" href="../../css/admin-dashboard/service-management.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo">
+    </div>
+    <nav class="menu">
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="platform-control.html">Platform Control</a>
+      <a href="user-management.html">User Management</a>
+      <a href="service-management.html" class="active">Service Management</a>
+      <a href="admin-analytics.html">Analytics</a>
+      <a href="admin-communication.html">Communication</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <section class="main-content">
+    <div class="topbar">
+      <h1>Service Management</h1>
+      <button class="action-btn">+ Add New Service</button>
+    </div>
+
+    <div class="overview-section">
+      <div class="card"><h2>562</h2><p>Total Listings</p></div>
+      <div class="card"><h2>498</h2><p>Active</p></div>
+      <div class="card"><h2>64</h2><p>Inactive</p></div>
+    </div>
+
+    <div class="table-section">
+      <h2>All Services</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Service ID</th>
+            <th>Service Name</th>
+            <th>Owner</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>#S2101</td><td>Findly Hostel</td><td>Rahul Mehta</td><td>Hostel</td><td>Active</td><td><button class="suspend">Suspend</button></td></tr>
+          <tr><td>#S2102</td><td>Findly Mess</td><td>Riya Sharma</td><td>Mess</td><td>Inactive</td><td><button class="restore">Restore</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</body>
+</html>

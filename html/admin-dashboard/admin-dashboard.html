@@ -8,98 +8,126 @@
 </head>
 <body>
 
-  <!-- =========================
-       Sidebar
-  ========================== -->
+  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="logo">
-      <img src="assets/logo.png" alt="Findly Logo">
-      <h2>Findly Admin</h2>
+      <img src="../../images/findly-full-logo.png" alt="Findly Logo" class="findly-logo" />
     </div>
     <nav class="menu">
-      <a href="admin-dashboard.html" class="active">Dashboard Overview</a>
-      <a href="admin-platform-control.html">Platform Control</a>
-      <a href="admin-analytics-reports.html">Analytics & Reports</a>
+      <a href="admin-dashboard.html" class="active">Dashboard</a>
+      <a href="platform-control.html">Platform Control</a>
+      <a href="admin-analytics.html">Analytics</a>
       <a href="admin-communication.html">Communication</a>
-      <a href="#" class="logout">Logout</a>
+      <a href="profile.html">Profile</a>
     </nav>
   </aside>
 
-  <!-- =========================
-       Main Content
-  ========================== -->
-  <main class="main-content">
+  <!-- Main Content -->
+  <section class="main-content">
 
-    <!-- Fixed Topbar -->
+    <!-- Topbar -->
     <div class="topbar">
-      <div class="center-title">
-        <h1>Dashboard Overview</h1>
+      <h1>Admin Dashboard Overview</h1>
+      <button class="action-btn">+ Add Announcement</button>
+    </div>
+
+    <!-- Overview Cards -->
+    <div class="overview-section">
+      <div class="card">
+        <h2>8,421</h2>
+        <p>Total Users</p>
       </div>
-      <div class="right">
-        <div class="icon">🔔</div>
-        <div class="icon">⚙️</div>
-        <div class="profile">
-          <img src="assets/profile.jpg" alt="Admin">
-          <span>Admin</span>
+      <div class="card">
+        <h2>136</h2>
+        <p>Total Owners</p>
+      </div>
+      <div class="card">
+        <h2>562</h2>
+        <p>Active Listings</p>
+      </div>
+      <div class="card">
+        <h2>₹2.45L</h2>
+        <p>Monthly Revenue</p>
+      </div>
+      <div class="card">
+        <h2>12</h2>
+        <p>Pending Approvals</p>
+      </div>
+    </div>
+
+    <!-- Platform Control -->
+    <div class="control-section">
+      <h2>Platform Control</h2>
+      <div class="control-grid">
+        <div class="control-card">
+          <span class="icon">✅</span>
+          <h3>Approve New Owners</h3>
+          <p>Review and approve pending owner registrations.</p>
+        </div>
+        <div class="control-card">
+          <span class="icon">🏠</span>
+          <h3>Manage Services</h3>
+          <p>Edit, delete, or verify listed services.</p>
+        </div>
+        <div class="control-card">
+          <span class="icon">🚫</span>
+          <h3>Suspend Accounts</h3>
+          <p>Temporarily block owner or user accounts.</p>
+        </div>
+        <div class="control-card">
+          <span class="icon">⚙️</span>
+          <h3>Global Settings</h3>
+          <p>Modify commission rates & service categories.</p>
         </div>
       </div>
     </div>
 
-    <!-- Actual Page Content -->
-    <section class="content">
-      <header>
-        <h2>Welcome, Admin 👋</h2>
-        <p>Manage, monitor, and maintain the Findly platform effectively.</p>
-      </header>
-
-      <!-- =========================
-           Cards Section
-      ========================== -->
-      <section class="cards-section">
-
-        <!-- Platform Control -->
-        <div class="card">
-          <h3><span class="icon">🧭</span> Platform Control</h3>
-          <ul>
-            <li>Approve/Reject owner and service registrations</li>
-            <li>Manage users, owners, and services</li>
-            <li>Suspend/Restore accounts</li>
-            <li>Manage global settings (commission %, service categories)</li>
-          </ul>
+    <!-- Analytics Summary -->
+    <div class="analytics-section">
+      <h2>Analytics & Reports Summary</h2>
+      <div class="analytics-grid">
+        <div class="analytics-card">
+          <h3>1,204</h3>
+          <p>Bookings This Month</p>
         </div>
-
-        <!-- Analytics & Reports -->
-        <div class="card">
-          <h3><span class="icon">📊</span> Analytics & Reports</h3>
-          <ul>
-            <li>View total users, bookings, leads, and payments</li>
-            <li>Monitor top-performing services</li>
-            <li>Generate reports on revenue and platform activity</li>
-          </ul>
+        <div class="analytics-card">
+          <h3>364</h3>
+          <p>Leads Generated</p>
         </div>
-
-        <!-- Communication -->
-        <div class="card">
-          <h3><span class="icon">💬</span> Communication</h3>
-          <ul>
-            <li>Handle user complaints and disputes</li>
-            <li>Send promotional emails or platform updates</li>
-            <li>Manage banners, announcements, and FAQs</li>
-          </ul>
+        <div class="analytics-card">
+          <h3>Findly Hostel</h3>
+          <p>Top Performing Service</p>
         </div>
-
-        <!-- System Management -->
-        <div class="card">
-          <h3><span class="icon">⚙️</span> System Management</h3>
-          <ul>
-            <li>Backup database and files</li>
-            <li>Log errors and monitor uptime</li>
-          </ul>
+        <div class="analytics-card">
+          <h3>₹8.6L</h3>
+          <p>Total Platform Revenue</p>
         </div>
+      </div>
+    </div>
 
-      </section>
-    </section>
-  </main>
+    <!-- System Snapshot -->
+    <div class="system-section">
+      <h2>System Snapshot</h2>
+      <div class="system-grid">
+        <div class="system-card">
+          <span class="status-dot active"></span>
+          <h4>Server Status</h4>
+          <p>Running Smoothly</p>
+        </div>
+        <div class="system-card">
+          <span class="status-dot stable"></span>
+          <h4>Database</h4>
+          <p>Connected</p>
+        </div>
+        <div class="system-card">
+          <span class="status-dot warning"></span>
+          <h4>API Response</h4>
+          <p>Minor Delay (320ms)</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
 </body>
 </html>
