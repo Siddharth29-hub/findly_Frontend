@@ -1,0 +1,315 @@
+/* =========================
+   Global Styles
+========================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f6fa;
+  color: #333;
+}
+
+/* =========================
+   Sidebar
+========================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 15px;
+}
+
+.logo img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.sidebar h2 {
+  color: #f97316;
+  margin-bottom: 30px;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: #0f172a;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.menu a.active,
+.menu a:hover {
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  color: #fff;
+}
+
+.logout {
+  background: #ef4444;
+  color: #fff !important;
+  margin-top: 20px;
+}
+
+/* =========================
+   Topbar
+========================= */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  height: 70px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.center-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center-title h1 {
+  font-size: 1.5rem;
+  color: #0f172a;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon {
+  font-size: 1.3rem;
+  color: #f97316;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.15);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+  border-radius: 25px;
+  padding: 5px 12px 5px 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* =========================
+   Main Content
+========================= */
+.main-content {
+  margin-left: 250px;
+  padding: 110px 40px 40px 40px;
+}
+
+/* =========================
+   Page Header
+========================= */
+.page-header {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 15px;
+  border-left: 5px solid #f97316;
+  animation: slideInHeader 0.8s ease forwards;
+}
+
+@keyframes slideInHeader {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: 0.3px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.page-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60%;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.page-header h2:hover::after {
+  width: 100%;
+}
+
+.page-header .accent {
+  color: #f97316;
+}
+
+.page-header p {
+  color: #555;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  max-width: 600px;
+}
+
+/* =========================
+   Tabs
+========================= */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tab.active,
+.tab:hover {
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  color: #fff;
+  border: none;
+}
+
+/* =========================
+   Tab Content
+========================= */
+.tab-panel {
+  display: none;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab-panel.active {
+  display: block;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Tables
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 12px 18px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f97316;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+tr:hover {
+  background: #fff7ed;
+}
+
+/* =========================
+   Buttons
+========================= */
+button {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.btn-approve { background: #22c55e; color: #fff; }
+.btn-reject { background: #ef4444; color: #fff; }
+.btn-suspend { background: #f59e0b; color: #fff; }
+.btn-restore { background: #16a34a; color: #fff; }
+.btn-edit { background: #3b82f6; color: #fff; }
+.btn-disable { background: #f97316; color: #fff; }
+.btn-enable { background: #16a34a; color: #fff; }
+.btn-delete { background: #dc2626; color: #fff; }
+.btn-save {
+  margin-top: 15px;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* =========================
+   Status
+========================= */
+.status-active { color: #16a34a; font-weight: 600; }
+.status-disabled { color: #dc2626; font-weight: 600; }
+
+/* =========================
+   Settings
+========================= */
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.settings input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.settings label {
+  font-weight: 500;
+  color: #0f172a;
+}

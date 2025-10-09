@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Findly</title>
+  <link rel="stylesheet" href="../../css/admin-dashboard/admin-dashboard.css" />
+</head>
+<body>
+
+  <!-- =========================
+       Sidebar
+  ========================== -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Findly Logo">
+      <h2>Findly Admin</h2>
+    </div>
+    <nav class="menu">
+      <a href="admin-dashboard.html" class="active">Dashboard Overview</a>
+      <a href="admin-platform-control.html">Platform Control</a>
+      <a href="admin-analytics-reports.html">Analytics & Reports</a>
+      <a href="admin-communication.html">Communication</a>
+      <a href="#" class="logout">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- =========================
+       Main Content
+  ========================== -->
+  <main class="main-content">
+
+    <!-- Fixed Topbar -->
+    <div class="topbar">
+      <div class="center-title">
+        <h1>Dashboard Overview</h1>
+      </div>
+      <div class="right">
+        <div class="icon">🔔</div>
+        <div class="icon">⚙️</div>
+        <div class="profile">
+          <img src="assets/profile.jpg" alt="Admin">
+          <span>Admin</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actual Page Content -->
+    <section class="content">
+      <header>
+        <h2>Welcome, Admin 👋</h2>
+        <p>Manage, monitor, and maintain the Findly platform effectively.</p>
+      </header>
+
+      <!-- =========================
+           Cards Section
+      ========================== -->
+      <section class="cards-section">
+
+        <!-- Platform Control -->
+        <div class="card">
+          <h3><span class="icon">🧭</span> Platform Control</h3>
+          <ul>
+            <li>Approve/Reject owner and service registrations</li>
+            <li>Manage users, owners, and services</li>
+            <li>Suspend/Restore accounts</li>
+            <li>Manage global settings (commission %, service categories)</li>
+          </ul>
+        </div>
+
+        <!-- Analytics & Reports -->
+        <div class="card">
+          <h3><span class="icon">📊</span> Analytics & Reports</h3>
+          <ul>
+            <li>View total users, bookings, leads, and payments</li>
+            <li>Monitor top-performing services</li>
+            <li>Generate reports on revenue and platform activity</li>
+          </ul>
+        </div>
+
+        <!-- Communication -->
+        <div class="card">
+          <h3><span class="icon">💬</span> Communication</h3>
+          <ul>
+            <li>Handle user complaints and disputes</li>
+            <li>Send promotional emails or platform updates</li>
+            <li>Manage banners, announcements, and FAQs</li>
+          </ul>
+        </div>
+
+        <!-- System Management -->
+        <div class="card">
+          <h3><span class="icon">⚙️</span> System Management</h3>
+          <ul>
+            <li>Backup database and files</li>
+            <li>Log errors and monitor uptime</li>
+          </ul>
+        </div>
+
+      </section>
+    </section>
+  </main>
+
+</body>
+</html>
