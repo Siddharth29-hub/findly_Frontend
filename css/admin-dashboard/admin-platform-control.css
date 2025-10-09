@@ -1,0 +1,408 @@
+/* =============================
+   Global Styles
+============================= */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  display: flex;
+  background: #f5f6fa;
+  color: #0f172a;
+}
+
+/* =============================
+   Sidebar
+============================= */
+.sidebar {
+  width: 250px;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 25px 15px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.sidebar .logo h2 {
+  color: #f97316;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.sidebar .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar .menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 12px 18px;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.sidebar .menu a:hover,
+.sidebar .menu a.active {
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  color: #fff;
+}
+
+.sidebar .menu .logout {
+  background: #ef4444;
+  color: #fff;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* =============================
+   Main Content
+============================= */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 25px 40px;
+  min-height: 100vh;
+}
+
+/* =============================
+   Topbar
+============================= */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.topbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9fafb;
+  border-radius: 20px;
+  padding: 6px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* =============================
+   Page Header
+============================= */
+.page-header {
+  margin: 35px 0 30px 0;
+  position: relative;
+  padding-left: 15px;
+}
+
+.fancy-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.fancy-heading .line-accent {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 4px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+  animation: slideIn 1.2s ease forwards;
+}
+
+.highlight-text {
+  color: #f97316;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.subtext {
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+/* Smooth underline animation */
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* =============================
+   Tabs
+============================= */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.tab.active,
+.tab:hover {
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 3px 10px rgba(249, 115, 22, 0.3);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  border-radius: 2px;
+}
+
+/* =============================
+   Tab Content Visibility Fix
+============================= */
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================
+   Table Styling
+============================= */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+th {
+  background: #f97316;
+  color: #fff;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+tr:hover {
+  background: #fff6ef;
+}
+
+/* =============================
+   Buttons
+============================= */
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-approve {
+  background: #22c55e;
+  color: #fff;
+}
+.btn-approve:hover {
+  background: #16a34a;
+}
+
+.btn-reject,
+.btn-delete {
+  background: #ef4444;
+  color: #fff;
+}
+.btn-reject:hover,
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+.btn-edit,
+.btn-enable,
+.btn-disable,
+.btn-suspend,
+.btn-restore {
+  background: #f59e0b;
+  color: #fff;
+}
+.btn-edit:hover,
+.btn-enable:hover,
+.btn-disable:hover,
+.btn-suspend:hover,
+.btn-restore:hover {
+  background: #d97706;
+}
+
+.btn-save {
+  margin-top: 15px;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+}
+.btn-save:hover {
+  transform: translateY(-2px);
+}
+
+/* =============================
+   Status Badges
+============================= */
+.status-active {
+  background: #22c55e;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.status-disabled {
+  background: #ef4444;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* =============================
+   Settings Panel
+============================= */
+.settings {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 500px;
+}
+
+.settings label {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.settings input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-top: 5px;
+}
+
+/* =============================
+   Responsive
+============================= */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .tabs {
+    flex-direction: column;
+  }
+}

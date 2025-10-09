@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Communication & Support Overview | Findly Admin</title>
+  <link rel="stylesheet" href="../../css/admin-dashboard/admin-communication.css" />
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Findly Logo" />
+      <h2>Findly Admin</h2>
+    </div>
+    <nav class="menu">
+      <a href="admin-dashboard.html">Dashboard Overview</a>
+      <a href="admin-platform-control.html">Platform Control</a>
+      <a href="admin-analytics-reports.html">Analytics & Reports</a>
+      <a href="admin-communication.html" class="active">Communication</a>
+      <a href="#" class="logout">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Topbar -->
+    <div class="topbar">
+      <h1 class="page-title">Communication & Support Overview</h1>
+      <div class="topbar-icons">
+        <span class="icon">🔔</span>
+        <span class="icon">⚙️</span>
+        <div class="profile">
+          <img src="assets/profile.jpg" alt="Admin" />
+          <span>Admin</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <h2 class="fancy-heading">
+        <span class="line-accent"></span>
+        <span>Connect with</span>
+        <span class="highlight-text">Users & Owners</span> – Resolve Issues & Share Updates
+      </h2>
+      <p class="subtext">
+        Manage user feedback, send platform announcements, and maintain FAQs.
+      </p>
+    </section>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active">💬 Complaints & Feedback</button>
+      <button class="tab">📢 Announcements</button>
+      <button class="tab">📧 Promotional Emails</button>
+      <button class="tab">🖼️ Banners & FAQs</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+
+      <!-- Complaints & Feedback -->
+      <div class="tab-panel active">
+        <h3>💬 Complaints & Feedback</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aarav Jain</td>
+                <td>aarav@gmail.com</td>
+                <td>Payment failed for booking.</td>
+                <td>08 Oct 2025</td>
+                <td><span class="status pending">Pending</span></td>
+                <td>
+                  <button class="btn-resolve">Resolve</button>
+                  <button class="btn-delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Simran Kaur</td>
+                <td>simran@gmail.com</td>
+                <td>Unable to upload hostel images.</td>
+                <td>07 Oct 2025</td>
+                <td><span class="status resolved">Resolved</span></td>
+                <td>
+                  <button class="btn-resolve">Resolve</button>
+                  <button class="btn-delete">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Announcements -->
+      <div class="tab-panel">
+        <h3>📢 Announcements & Updates</h3>
+        <form class="announcement-form">
+          <input type="text" placeholder="Announcement Title" required />
+          <textarea rows="4" placeholder="Write your announcement here..." required></textarea>
+          <button class="btn-publish">Publish Announcement</button>
+        </form>
+
+        <div class="table-wrapper">
+          <h4>Recent Announcements</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Platform Maintenance Notice</td>
+                <td>06 Oct 2025</td>
+                <td><span class="status published">Published</span></td>
+              </tr>
+              <tr>
+                <td>New Hostel Listing Rules</td>
+                <td>01 Oct 2025</td>
+                <td><span class="status draft">Draft</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Promotional Emails -->
+      <div class="tab-panel">
+        <h3>📧 Promotional Emails</h3>
+        <form class="email-form">
+          <input type="text" placeholder="Email Subject" required />
+          <textarea rows="4" placeholder="Write your promotional message..." required></textarea>
+          <select required>
+            <option value="" disabled selected>Select Target Audience</option>
+            <option>All Users</option>
+            <option>Owners</option>
+            <option>Both</option>
+          </select>
+          <button class="btn-send">Send Notification</button>
+        </form>
+      </div>
+
+      <!-- Banners & FAQs -->
+      <div class="tab-panel">
+        <h3>🖼️ Banners & FAQs</h3>
+        <div class="banner-upload">
+          <label>Upload New Homepage Banner:</label>
+          <input type="file" />
+          <button class="btn-upload">Upload Banner</button>
+        </div>
+
+        <div class="faq-section">
+          <h4>Add New FAQ</h4>
+          <input type="text" placeholder="Question" required />
+          <textarea rows="3" placeholder="Answer" required></textarea>
+          <button class="btn-save-faq">Save FAQ</button>
+        </div>
+
+        <div class="table-wrapper">
+          <h4>Existing FAQs</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th>Answer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>How can owners register their services?</td>
+                <td>Owners can sign up and submit verification documents for admin approval.</td>
+              </tr>
+              <tr>
+                <td>Can users cancel bookings?</td>
+                <td>Yes, users can cancel before 24 hours of check-in through their dashboard.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tab Switching Script -->
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
+        tab.classList.add("active");
+        panels[index].classList.add("active");
+      });
+    });
+
+    // Show first tab by default
+    tabs[0].classList.add("active");
+    panels[0].classList.add("active");
+  </script>
+</body>
+</html>

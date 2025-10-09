@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform Control | Findly Admin</title>
+  <link rel="stylesheet" href="../../css/admin-dashboard/admin-platform-control.css" />
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Findly Logo" />
+      <h2>Findly Admin</h2>
+    </div>
+    <nav class="menu">
+      <a href="admin-dashboard.html">Dashboard Overview</a>
+      <a href="admin-platform-control.html" class="active">Platform Control</a>
+      <a href="admin-analytics-reports.html">Analytics & Reports</a>
+      <a href="admin-communication.html">Communication</a>
+      <a href="#" class="logout">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Topbar -->
+    <div class="topbar">
+      <h1 class="page-title">Platform Control</h1>
+      <div class="topbar-icons">
+        <span class="icon">🔔</span>
+        <span class="icon">⚙️</span>
+        <div class="profile">
+          <img src="assets/profile.jpg" alt="Admin" />
+          <span>Admin</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fancy Header Section -->
+    <section class="page-header">
+      <h2 class="fancy-heading">
+        <span class="line-accent"></span>
+        <span>Manage</span>
+        <span class="highlight-text">Owners</span>,
+        Users, Services & 
+        <span class="highlight-text">Platform Settings</span>
+      </h2>
+      <p class="subtext">
+        Approve new services, control users, and modify platform configurations.
+      </p>
+    </section>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active">🧾 Owner & Service Approvals</button>
+      <button class="tab">👥 User Management</button>
+      <button class="tab">🏢 Service Management</button>
+      <button class="tab">⚙️ Global Settings</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- Owner & Service Approvals -->
+      <div class="tab-panel active">
+        <h3>Pending Approvals</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Owner Name</th>
+                <th>Business Name</th>
+                <th>Service Type</th>
+                <th>Date Submitted</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rohit Mehta</td>
+                <td>Stay4U Hostels</td>
+                <td>Hostel</td>
+                <td>2025-10-06</td>
+                <td>
+                  <button class="btn-approve">Approve</button>
+                  <button class="btn-reject">Reject</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Priya Sharma</td>
+                <td>QuickBite</td>
+                <td>Mess</td>
+                <td>2025-10-05</td>
+                <td>
+                  <button class="btn-approve">Approve</button>
+                  <button class="btn-reject">Reject</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- User Management -->
+      <div class="tab-panel">
+        <h3>All Users</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Role</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aarav Jain</td>
+                <td>aarav@gmail.com</td>
+                <td>9876543210</td>
+                <td>User</td>
+                <td><button class="btn-suspend">Suspend</button></td>
+              </tr>
+              <tr>
+                <td>Simran Kaur</td>
+                <td>simran@gmail.com</td>
+                <td>9123456789</td>
+                <td>Owner</td>
+                <td><button class="btn-restore">Restore</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Service Management -->
+      <div class="tab-panel">
+        <h3>All Services</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Service Name</th>
+                <th>Category</th>
+                <th>Owner</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>StayHub Hostel</td>
+                <td>Hostel</td>
+                <td>Rohit Mehta</td>
+                <td><span class="status-active">Active</span></td>
+                <td>
+                  <button class="btn-edit">Edit</button>
+                  <button class="btn-disable">Disable</button>
+                  <button class="btn-delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>QuickBite Mess</td>
+                <td>Mess</td>
+                <td>Priya Sharma</td>
+                <td><span class="status-disabled">Disabled</span></td>
+                <td>
+                  <button class="btn-edit">Edit</button>
+                  <button class="btn-enable">Enable</button>
+                  <button class="btn-delete">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Global Settings -->
+      <div class="tab-panel">
+        <h3>Global Settings</h3>
+        <div class="settings">
+          <label>Commission Percentage (%)</label>
+          <input type="number" placeholder="Enter commission %" />
+          <label>Service Categories</label>
+          <input type="text" placeholder="Add new category" />
+          <button class="btn-save">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tab Switching Script -->
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
+        tab.classList.add("active");
+        panels[index].classList.add("active");
+      });
+    });
+
+    // Show first tab by default
+    tabs[0].classList.add("active");
+    panels[0].classList.add("active");
+  </script>
+</body>
+</html>
