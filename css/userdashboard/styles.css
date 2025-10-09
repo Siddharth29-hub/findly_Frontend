@@ -9,7 +9,7 @@
 
 /* CSS variables for easy theme editing */
 :root {
-  --accent: #2196f3b7;     /* sky blue accent */
+  --accent: #fff;     /* sky blue accent */
   --card: #fff;            /* card background */
   --bg: #f3f7fb;           /* page background */
   --text: #030304;         /* default text color */
@@ -26,7 +26,7 @@ html, body { height: 100%; }
 
 body {
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-  background: var(--bg);
+  background: #fff;
   color: var(--text);
   -webkit-font-smoothing: antialiased; /* smoother font */
 }
@@ -40,9 +40,8 @@ body {
   top: 20px;
   bottom: 20px;
   width: 240px;
-  background: rgba(178, 190, 196, 0.25); /* transparent sky blue */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #0b2b3a;
   border-radius: 12px;
@@ -86,6 +85,9 @@ body {
 .main {
   margin-left: 280px;
   padding: 32px;
+  background: #fff;
+  box-shadow: #bdded5;
+ 
   min-height: 100vh;
 }
 
@@ -99,11 +101,15 @@ body {
 
 /* Reusable card design */
 .card {
-  background: var(--card);
+  /* background: var(--card);
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-  margin-bottom: 16px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 16px; */
+   background: #fff; /* white card */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 /* Welcome card layout */
