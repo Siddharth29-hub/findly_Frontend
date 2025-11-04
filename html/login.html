@@ -7,44 +7,119 @@
 
   <!-- Shared Navbar Styles -->
   <link rel="stylesheet" href="../css/navbar.css" />
-
-  <!-- Page-Specific Styles -->
   <link rel="stylesheet" href="../css/login.css" />
 
-  <!-- Font Awesome for Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- Login Container -->
   <div class="login-container">
     <div class="login-box">
       <img src="../images/findly-full-logo.png" alt="Findly Logo" class="login-logo">
       <h2>Login</h2>
       <p>Don’t have an account? <a href="signup.html">Sign up</a></p>
 
-      <form>
+      <form id="loginForm">
         <!-- Mobile -->
-        <div class="input-group">
+        <div class="input-group" id="mobileGroup">
           <i class="fa fa-mobile-alt"></i>
-          <input type="tel" placeholder="Enter your mobile number" required>
+          <input type="tel" id="mobile" placeholder="Enter your mobile number" >
         </div>
 
-        <!-- OTP -->
-        <div class="input-group">
+        <!-- OTP (hidden initially) -->
+        <div class="input-group" id="otpGroup" style="display: none;">
           <i class="fa fa-key"></i>
-          <input type="text" placeholder="Enter OTP" required>
+          <input type="text" id="otp" placeholder="Enter OTP" >
         </div>
 
         <!-- Button -->
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn" id="loginBtn">Send OTP</button>
       </form>
 
-      <!-- Terms -->
       <p class="terms">
-        By logging in, you agree to our <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
+        By logging in, you agree to our 
+        <a href="#">Terms of Service</a> & 
+        <a href="#">Privacy Policy</a>.
       </p>
     </div>
   </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const mobileInput = document.getElementById("mobile");
+    const otpGroup = document.getElementById("otpGroup");
+    const otpInput = document.getElementById("otp");
+    const loginBtn = document.getElementById("loginBtn");
+
+    let step = 1; // Step 1: enter mobile, Step 2: enter OTP
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (step === 1) {
+        const mobile = mobileInput.value.trim();
+        if (!mobile) return alert("Please enter your mobile number");
+
+        // ✅ Call API to send OTP
+        try {
+          const response = await fetch("http://127.0.0.1:8000/api/login/request-otp/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ mobile })
+          });
+
+          const data = await response.json();
+          console.log(data)
+          if (response.ok) {
+            alert("OTP sent successfully!");
+            otpGroup.style.display = "flex"; // show OTP field
+            mobileInput.readOnly = true;
+            loginBtn.textContent = "Verify OTP";
+            step = 2; // move to next step
+          } else {
+            alert(data.error || "Failed to send OTP");
+          }
+        } catch (err) {
+          alert("Network error. Try again!");
+        }
+      } 
+      else if (step === 2) {
+        const otp = otpInput.value.trim();
+        const mobile = mobileInput.value.trim();
+        if (!otp) return alert("Please enter OTP");
+
+        // ✅ Call API to verify OTP
+        try {
+          const response = await fetch("http://127.0.0.1:8000/api/login/verify-otp/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ mobile, otp })
+          });
+
+          const data = await response.json();
+          console.log(data)
+          if (response.ok) {
+            alert("Login successful!");
+            if(data.user.role=='user'){
+              window.location.href = "./userdasboard/dashboardindex.html"; // redirect after success
+
+            }else if(data.user.role=="owner"){
+              window.location.href = "./owner-dashboard/owner-dashboard.html";
+            }
+            else if(data.user.role=="admin"){
+              window.location.href="./admin-dashboard/admin-dashboard.html"
+            }
+
+          } else {
+            alert(data.error || "Invalid OTP");
+          }
+        } catch (err) {
+          alert("Network error. Try again!");
+        }
+      }
+    });
+  </script>
 </body>
 </html>
